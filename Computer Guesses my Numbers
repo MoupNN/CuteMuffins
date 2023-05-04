@@ -1,0 +1,30 @@
+import random
+
+Number = input('Choose a Number 0-30: ')
+if (Number < str(0)):
+    print('Your Number Must Bigger Than 0')
+elif (Number > str(30)):
+    print ('Your Number Must Lower Than 30')
+else:
+    def play_game():
+        random.randint(0, 30)
+
+        low = 0
+        high = 30
+
+        for i in range(1, 6):
+            guess = (low + high) // 2
+            feedback = input(f"My guess is {guess}. Is it (H)igher, (L)ower, or (C)orrect? ").lower()
+            if feedback == "c":
+                print(f"Hurray!! I have guessed it in {i} tries!")
+                return
+            elif feedback == "l":
+                high = guess - 1
+            elif feedback == "h":
+                low = guess + 1
+            else:
+                print("Invalid feedback. Please enter H, L, or C.")
+
+        print("I am sorry, I am a bad computer :(((.")
+
+    play_game()
