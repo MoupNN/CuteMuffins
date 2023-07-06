@@ -1,0 +1,37 @@
+
+# Prompt the user for input
+start = int(input('Enter the Starting Number for Fibonacci: '))
+end = int(input('Enter the Ending Number for Fibonacci: '))
+
+# Check the entered values are positive
+if start < 0 or end < 0:
+    print('Both Values Must Bigger Than 0!!! ')
+elif start > end:
+    print("I Think Your Starting Number is:", end, "and Your Ending Number is:", start)
+    fib_numbers = []
+    a = 0
+    b = 1
+    while b < start:
+        if b > end:
+            fib_numbers.append(b)
+        a, b = b, a + b
+
+    if len(fib_numbers) == 0:
+        print("There are no Fibonacci numbers between", start, "and", end)
+    else:
+        print('Fibonacci numbers between', end, "and", start, ":")
+        print(fib_numbers)
+else:
+    fib_numbers = []
+    a = 0
+    b = 1
+    while b < end:
+        if b > start:
+            fib_numbers.append(b)
+        a, b = b, a + b
+
+    if len(fib_numbers) == 0:
+        print("There are no Fibonacci numbers between", start, "and", end)
+    else:
+        print('Fibonacci numbers between', start, "and", end, ":")
+        print(fib_numbers)
